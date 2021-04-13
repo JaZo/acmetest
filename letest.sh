@@ -475,6 +475,9 @@ _assertcmd() {
   
   if [ "$?" = "0" ] ; then 
     __ok ""
+    if [ "$DEBUG" ] ; then
+      cat "cmd.log" >&2
+    fi
   else
     __fail ""
     if [ "$DEBUG" ] ; then
